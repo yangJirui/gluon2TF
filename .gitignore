@@ -111,6 +111,8 @@ ENV/
 *events.out.tfevents*
 *.ckpt
 *.tfrecord*
+*.params
+*.zip
 
 # folder
 tools/demos/*
