@@ -170,6 +170,7 @@ def read_mxnet_weights(path):
         np_data = tensor.asnumpy()
         name_array_dict[name] = np_data
         print ("name: {} || shape: {} || dtype: {}".format(name, np_data.shape, np_data.dtype))
+    return name_array_dict
 
 def read_resnet_50_v1d():
 
