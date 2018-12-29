@@ -109,7 +109,7 @@ ENV/
 *.png*
 *.jpg*
 *events.out.tfevents*
-*.ckpt
+*.ckpt*
 *.tfrecord*
 *.params
 *.zip

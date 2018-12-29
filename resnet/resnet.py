@@ -8,6 +8,7 @@ import tensorflow.contrib.slim as slim
 from resnet_utils import get_resnet_v1_d, get_resnet_v1_b
 from parse_mxnet_weights import read_mxnet_weights, check_mxnet_names, check_tf_vars
 import weights_map
+import os
 
 BottleNeck_NUM_DICT = {
     'resnet50_v1b': [3, 4, 6, 3],
@@ -72,6 +73,7 @@ def build_resnet(img_batch=None, scope='resnet50_v1d', is_training=True, freeze_
                            is_training=is_training, freeze_norm=freeze_norm, num_cls=num_cls)
 
     return logits
+
 
 if __name__ == "__main__":
     build_resnet()

@@ -155,5 +155,5 @@ def download_mxnet_weights(name, tag=None, root='../mxnet_weights'):
 
 
 if __name__ == '__main__':
-    download_mxnet_weights('resnet%d_v%db' % (50, 1),
+    download_mxnet_weights('resnet%d_v%db' % (101, 1),
                            tag=True)

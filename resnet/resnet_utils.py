@@ -96,6 +96,10 @@ def bottleneck_v1b(input_x, base_channel, scope, stride=1, projection=False, avg
         if projection:
 
             if avg_down:  # design for resnet_v1d
+                '''
+                In GluonCV, padding is "ceil mode". Here we use "SAME" to replace it, which may cause Erros.
+                And the erro will grow with depth of resnet. e.g. res101 erro > res50 erro
+                '''
                 shortcut = slim.avg_pool2d(input_x, kernel_size=[stride, stride], stride=stride, padding="SAME",
                                            data_format=DATA_FORMAT)
                 if DEBUG:
