@@ -47,9 +47,9 @@ def check_tf_vars(tf_mxnet_map, mxnetName_array_dict, tf_model_vars, scope='resn
     # check_name
     for tf_name, name2 in zip(tf_nake_names, sorted(tf_mxnet_map.keys())):
         assert tf_name == name2, "key in tf_model_vars and tf_mxnet_map do not equal, detail is :\n" \
-                             "tf_name in tf_model_vars: {}\n" \
-                             "name2 in tf_mxnet_maps: {}".format(tf_name, name2)
-    print("all tf_model_var can find mapped name in tf_mxnet_map")
+                                 "tf_name in tf_model_vars: {}\n" \
+                                 "name2 in tf_mxnet_maps: {}".format(tf_name, name2)
+    print("all tf_model_var can find matched name in tf_mxnet_map")
 
     # check shape
     for var in tf_model_vars:
@@ -62,14 +62,4 @@ def check_tf_vars(tf_mxnet_map, mxnetName_array_dict, tf_model_vars, scope='resn
                                                                                             array.shape)
     print("all tf_model_var shapes are matched with array in mxnet_array_dict...")
 
-
-def check_resnet50_v1d():
-
-    pass
-
-if __name__ == "__main__":
-    # read_resnet_50_v1d()
-    # check_mxnet_names()
-    # check_tf_names()
-    check_resnet50_v1d()
 

@@ -26,7 +26,7 @@ BASE_CHANNELS_DICT = {
 
 def create_resotre_op(scope, mxnet_weights_path):
 
-    mxnetName_array_dict = read_mxnet_weights(mxnet_weights_path, show=True)
+    mxnetName_array_dict = read_mxnet_weights(mxnet_weights_path, show=False)
 
     tf_mxnet_map, mxnet_tf_map = \
         weights_map.get_map(scope=scope,
@@ -56,10 +56,10 @@ def create_resotre_op(scope, mxnet_weights_path):
 def build_resnet(img_batch=None, scope='resnet50_v1d', is_training=True, freeze_norm=False, num_cls=1000):
     if img_batch is None:
         np.random.seed(30)
-        img_batch = np.random.rand(1, 3, 224, 224)  # C, H, W
+        img_batch = np.random.rand(1, 224, 224, 3)  # H, W, C
         img_batch = tf.constant(img_batch, dtype=tf.float32)
 
-    print("Please Ensure the img is in NCHW")
+    print("Please Ensure the img is in NHWC")
 
     if scope.endswith('b'):
         get_resnet_fn = get_resnet_v1_b
