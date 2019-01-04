@@ -113,6 +113,7 @@ ENV/
 *.tfrecord*
 *.params
 *.zip
+tf_ckpts/
 
 # folder
 tools/demos/*
