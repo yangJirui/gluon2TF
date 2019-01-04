@@ -9,7 +9,7 @@ and the 1000-dimensional Logits error rate is controlled within the range of 1e-
 (We welcome you to submit PR to support more models.)
 
 We also try to transfer these weights to object detection (using FPN as the baseline, the specific detection code we will post [here](https://github.com/DetectionTeamUCAS/FPN_Tensorflow_DEV).),
-and train on voc07trainVal (excluding voc2012 dataset), test in voc07test. The results are as follows:
+and **train on voc07trainVal (excluding voc2012 dataset), test in voc07test**. The results are as follows:
 
 ## Comparison
 
