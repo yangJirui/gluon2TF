@@ -158,7 +158,7 @@ def get_resnet_v1_b_base(input_x, freeze_norm, scope="resnet50_v1b", bottleneck_
             feature_dict["C1"] = net
         for i in range(2, len(bottleneck_nums)+2):
             spatial_downsample = False if i == 2 else True
-            with slim.arg_scope(resnet_arg_scope(is_training=(not freeze[i-2]) and is_training,
+            with slim.arg_scope(resnet_arg_scope(is_training=(not freeze[i-1]) and is_training,
                                                  freeze_norm=freeze_norm)):
                 net = make_block(net=net, base_channel=base_channels[i-2],
                                  bottleneck_nums=bottleneck_nums[i-2],
@@ -210,7 +210,7 @@ def get_resnet_v1_d_base(input_x, freeze_norm, scope="resnet50_v1d", bottleneck_
             # print (net)
         for i in range(2, len(bottleneck_nums)+2):
             spatial_downsample = False if i == 2 else True
-            with slim.arg_scope(resnet_arg_scope(is_training=(not freeze[i-2]) and is_training,
+            with slim.arg_scope(resnet_arg_scope(is_training=(not freeze[i-1]) and is_training,
                                                  freeze_norm=freeze_norm)):
                 net = make_block(net=net, base_channel=base_channels[i-2],
                                  bottleneck_nums=bottleneck_nums[i-2],
