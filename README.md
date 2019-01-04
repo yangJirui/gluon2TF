@@ -22,7 +22,8 @@ and train on voc07trainVal (excluding voc2012 dataset), test in voc07test. The r
 
 
 **FPN_resnet101_v1_d is transfer from GluonCV**
-**FPN_resnet101_v1(original) are official resnet in [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/slim/nets)**
+
+**FPN_resnet101_v1(original) is official resnet in [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/slim/nets)**
 
 ## My Development Environment
 1、python2.7 (anaconda recommend)
