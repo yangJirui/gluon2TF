@@ -34,7 +34,7 @@ def read_mxnet_weights(path, show=False):
 def check_mxnet_names(mxnet_tf_map, mxnetName_array_dict):
 
     for key1, key2 in zip(sorted(mxnet_tf_map.keys()), sorted(mxnetName_array_dict.keys())):
-        assert key1 == key2, "key in mxnet_array_dict and mxnet_tf_map do not equal, detail is :\n" \
+        assert key1 == key2, "key in mxnet_array_dict and mxnet_tf_map do not equal, details are :\n" \
                              "key1 in mxnet_tf_map: {}\n"\
                              "key2 in mxnet_array dict: {}".format(key1, key2)
     if len(mxnetName_array_dict) == len(mxnet_tf_map):
@@ -46,7 +46,7 @@ def check_tf_vars(tf_mxnet_map, mxnetName_array_dict, tf_model_vars, scope='resn
     tf_nake_names = sorted([var.op.name.split("%s/" % scope)[1] for var in tf_model_vars])
     # check_name
     for tf_name, name2 in zip(tf_nake_names, sorted(tf_mxnet_map.keys())):
-        assert tf_name == name2, "key in tf_model_vars and tf_mxnet_map do not equal, detail is :\n" \
+        assert tf_name == name2, "key in tf_model_vars and tf_mxnet_map do not equal, details are :\n" \
                                  "tf_name in tf_model_vars: {}\n" \
                                  "name2 in tf_mxnet_maps: {}".format(tf_name, name2)
     print("all tf_model_var can find matched name in tf_mxnet_map")
@@ -56,10 +56,10 @@ def check_tf_vars(tf_mxnet_map, mxnetName_array_dict, tf_model_vars, scope='resn
         name = var.op.name.split("%s/"%scope)[1]
         array = mxnetName_array_dict[tf_mxnet_map[name]]
 
-        assert var.shape == array.shape,  "var in tf_model_vars and mxnet_arrays shape do not equal, detail is :\n" \
+        assert var.shape == array.shape,  "var in tf_model_vars and mxnet_arrays shape do not equal, details are :\n" \
                                           "tf_var in tf_model_vars: {}\n" \
                                           "name in tf_mxnet_maps: {}, shape is : {}".format(var, tf_mxnet_map[name],
                                                                                             array.shape)
-    print("all tf_model_var shapes are matched with array in mxnet_array_dict...")
+    print("All tf_model_var shapes match the shape of arrays in mxnet_array_dict...")
 
 

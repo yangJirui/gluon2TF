@@ -34,13 +34,13 @@ def mxnet_process_img(path):
         img_arr = np.expand_dims(img_arr, axis=0)
     img_tf_tensor = tf.constant(img_arr)
 
-    np.random.seed(30)
-    img = nd.array(np.random.randn(1, 3, 600, 800))
-    img_tf_tensor = tf.constant(img.asnumpy())
+    # np.random.seed(30)
+    # img = nd.array(np.random.randn(1, 3, 600, 800))
+    # img_tf_tensor = tf.constant(img.asnumpy())
     img_tf_tensor = tf.transpose(img_tf_tensor, [0, 2, 3, 1])
     return img, img_tf_tensor
 
-
+#
 def mxnet_infer(img):
 
     model_name = MODEL_NAME
@@ -127,6 +127,6 @@ if __name__ == '__main__':
     #          save_ckpt=True)
     cal_erro(img_path='../demo_img/person.jpg',
              use_tf_ckpt=True,
-             ckpt_path='/home/yjr/MxNet_Codes/gloun2TF/tf_ckpts/%s.ckpt' % MODEL_NAME,
+             ckpt_path='../tf_ckpts/%s.ckpt' % MODEL_NAME,
              save_ckpt=False)
     print (20*"++")
