@@ -27,10 +27,15 @@ and train on voc07trainVal (excluding voc2012 dataset), test in voc07test. The r
 
 ## My Development Environment
 1、python2.7 (anaconda recommend)
+
 2、cuda9.0
-3、[opencv(cv2)](https://pypi.org/project/opencv-python/)    
+
+3、[opencv(cv2)](https://pypi.org/project/opencv-python/)
+
 4、mxnet-cu90 (1.3.0)
+
 5、tensorflow == 1.10
+
 6、[GlounCV](https://gluon-cv.mxnet.io/)
 
 ## Download MxNet GluonCV PreTrained Weights
