@@ -43,7 +43,7 @@ and train on voc07trainVal (excluding voc2012 dataset), test in voc07test. The r
 ```
 cd $PATH_ROOT/resnet
 (modify the resnet version in the main function of download_mxnet_resnet_weights.py.)
-python /home/yjr/MxNet_Codes/gluon2TF/resnet/download_mxnet_resnet_weights.py
+python download_mxnet_resnet_weights.py
 ```
 
 
